@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://ve1cthw5oddh"]
+
+[ext_resource type="Script" path="res://bomb.gd" id="1_7p8ba"]
+[ext_resource type="PackedScene" uid="uid://rwucg6oaw1rp" path="res://GLB format/bomb.glb" id="1_m3cuc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xcgjq"]
+radius = 0.249023
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5b0sl"]
+radius = 0.777048
+
+[sub_resource type="Curve" id="Curve_tfsmu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.630435, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.021978), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ywwch"]
+curve = SubResource("Curve_tfsmu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hvrpp"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_ywwch")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2xu8"]
+albedo_color = Color(0.923158, 0.378347, 0.0288296, 1)
+emission_enabled = true
+emission = Color(0.944138, 0.693492, 0.305664, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_36ajn"]
+material = SubResource("StandardMaterial3D_m2xu8")
+top_radius = 0.1
+bottom_radius = 0.0
+height = 1.5
+
+[node name="Bomb" type="RigidBody3D"]
+script = ExtResource("1_7p8ba")
+
+[node name="bomb2" parent="." instance=ExtResource("1_m3cuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045912, -0.196201, 0.0610327)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_xcgjq")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_5b0sl")
+
+[node name="Debris" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 24
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_hvrpp")
+draw_pass_1 = SubResource("CylinderMesh_36ajn")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
