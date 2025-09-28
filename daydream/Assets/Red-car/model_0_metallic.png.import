@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pfypo080ltwu"
-path="res://.godot/imported/model_0_roughness.png-8ae89c6abdffbabb798c0c82e868d7d1.ctex"
+uid="uid://dy7yw82b7y5p5"
+path="res://.godot/imported/model_0_metallic.png-94db941bfb20c154a7fec6fe836193f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/car/model_0_roughness.png"
-dest_files=["res://.godot/imported/model_0_roughness.png-8ae89c6abdffbabb798c0c82e868d7d1.ctex"]
+source_file="res://Assets/Red-car/model_0_metallic.png"
+dest_files=["res://.godot/imported/model_0_metallic.png-94db941bfb20c154a7fec6fe836193f2.ctex"]
 
 [params]
 

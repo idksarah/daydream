@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nmmmd43u6pr4"
-path="res://.godot/imported/model_1_normal.png-615df22993041c91f8c7c02843fd5967.ctex"
+uid="uid://cqm73eksjs4be"
+path.s3tc="res://.godot/imported/model_0_color.png-e27cd3705d14c845391d957d25d9ba77.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/car/model_1_normal.png"
-dest_files=["res://.godot/imported/model_1_normal.png-615df22993041c91f8c7c02843fd5967.ctex"]
+source_file="res://Assets/Blue-car/model_0_color.png"
+dest_files=["res://.godot/imported/model_0_color.png-e27cd3705d14c845391d957d25d9ba77.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
