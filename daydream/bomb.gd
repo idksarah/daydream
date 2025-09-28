@@ -10,7 +10,6 @@ var animation_timeout = .2
 func _ready() -> void:
 	timer.wait_time = explosion_timeout
 	timer.start()
-	print("bomb init")
 		
 func _process(delta: float) -> void:
 	if timer.time_left == 0:
@@ -19,7 +18,7 @@ func _process(delta: float) -> void:
 		queue_free()
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("bomb entered")
-	if (!(body is Fence)): return
+	print("bomb entered; body name = " + str(body))
+	if (!(body is Fence || body is Car)): return
 	await get_tree().create_timer(timer.time_left + animation_timeout).timeout
 	body.queue_free()

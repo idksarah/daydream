@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch2e3fvmhuh3w"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_qrpgm"]
+[ext_resource type="FontFile" uid="uid://bd7iajmkmfwfg" path="res://beachday.ttf" id="1_r7e15"]
+
+[sub_resource type="Theme" id="Theme_6uqwt"]
+default_font = ExtResource("1_r7e15")
+default_font_size = 35
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_qrpgm")
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_6uqwt")
+text = "0"

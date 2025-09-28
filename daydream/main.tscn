@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://blonexlb3jhe6"]
+[gd_scene load_steps=6 format=3 uid="uid://blonexlb3jhe6"]
 
 [ext_resource type="MeshLibrary" uid="uid://eyo24wpobt7n" path="res://Assets/tiles.tres" id="1_wskms"]
-[ext_resource type="PackedScene" uid="uid://ve1cthw5oddh" path="res://bomb.tscn" id="3_14qy1"]
-[ext_resource type="PackedScene" uid="uid://kor8ar4s7f2u" path="res://fence.tscn" id="3_ugsh4"]
+[ext_resource type="PackedScene" path="res://bomb.tscn" id="3_14qy1"]
+[ext_resource type="PackedScene" path="res://fence.tscn" id="3_ugsh4"]
+[ext_resource type="PackedScene" uid="uid://ch2e3fvmhuh3w" path="res://hud.tscn" id="4_5p71c"]
+[ext_resource type="PackedScene" uid="uid://bmcr2q3h86eou" path="res://car.tscn" id="5_vkax5"]
 
 [node name="Main" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60638, -1.0964, 0.647599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3833, -1.0964, 0.67788)
 mesh_library = ExtResource("1_wskms")
 cell_size = Vector3(0.5, 0.25, 0.5)
 data = {
@@ -16,11 +18,25 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5573, 0.689099, 5.84034)
-fov = 56.4767
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06604, 0.689099, 9.17753)
+fov = 69.0305
 
 [node name="Bomb2" parent="." instance=ExtResource("3_14qy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53564, 1.04003, 2.77924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0877, 1.04003, 3.39528)
 
 [node name="Fence" parent="." instance=ExtResource("3_ugsh4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15568, 0.363803, 2.09505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46766, 0.363803, 2.71109)
+
+[node name="HUD" parent="." instance=ExtResource("4_5p71c")]
+
+[node name="Car" parent="." instance=ExtResource("5_vkax5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3485, 0.289915, 1.06206)
+
+[node name="Car2" parent="." instance=ExtResource("5_vkax5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08959, 0.579829, 0.0619259)
+
+[node name="Car3" parent="." instance=ExtResource("5_vkax5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47237, 0.579829, 3.8502)
+
+[node name="Car3" parent="Car3" instance=ExtResource("5_vkax5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13053, 0.579829, 0.158939)

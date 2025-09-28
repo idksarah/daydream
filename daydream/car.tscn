@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmcr2q3h86eou"]
+
+[ext_resource type="Script" path="res://car.gd" id="1_ph3jr"]
+[ext_resource type="ArrayMesh" uid="uid://bfsk6w3jpo7c0" path="res://Assets/car/red-car.obj" id="2_h4gpy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_km50d"]
+size = Vector3(0.803833, 1.04565, 1.43084)
+
+[node name="Car" type="RigidBody3D"]
+script = ExtResource("1_ph3jr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.05304, 0.318481, -0.438568)
+shape = SubResource("BoxShape3D_km50d")
+
+[node name="Red-car" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.49691e-10, 0, 0.008, 0, 0.008, 0, -0.008, 0, -3.49691e-10, 0, 0, 0)
+mesh = ExtResource("2_h4gpy")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.05304, 0.318481, -0.438568)
+shape = SubResource("BoxShape3D_km50d")
