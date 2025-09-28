@@ -8,6 +8,9 @@ var animation_timeout = .2
 var exploding = false
 var playerInRadius = false
 
+var red_baby = load("res://Assets/Red-baby-duck/red_baby_duck.obj")
+var yellow_baby = load("res://Assets/Yellow-baby-duck/yellow_baby_duck.obj")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

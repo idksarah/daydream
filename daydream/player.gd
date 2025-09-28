@@ -7,6 +7,9 @@ const BOMB_OFFSET = .5
 var Bomb = preload("res://bomb.tscn")
 @onready var hud = $"../HUD"
 
+
+@export var rotation_speed := 20.0
+
 var Direction := {
 	forward = "forward",
 	left = "left",
@@ -20,8 +23,17 @@ var cachedDirection = Direction.forward
 var score = 0
 
 func _physics_process(delta: float) -> void:
-	score =  (int(abs(position.z - 12) * 10))
+	score =  (int(abs(position.z - 5) * 10))
 	hud.set_score(score)
+	
+	#get direction
+	var raw_input := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var forward := Vector3.FORWARD
+	var right := Vector3.LEFT
+	
+	var move_direction := forward * raw_input.y + right * raw_input.x
+	move_direction.y = 0.0
+	move_direction = move_direction.normalized()
 	
 	# gravity
 	if not is_on_floor():
@@ -49,24 +61,35 @@ func _physics_process(delta: float) -> void:
 		direction = Direction.back
 	else:
 		velocity.z = 0
-
-	move_and_slide()
+		
 	
-	# set direction
-	if cachedDirection != direction:
-		if direction == Direction.forward:
-			global_rotation = Vector3(0, 0, 0)
-		elif direction == Direction.right:
-			global_rotation = Vector3(0, -Singleton.pi / 2, 0)
-		elif direction == Direction.left:
-			global_rotation = Vector3(0, Singleton.pi / 2, 0)
-		else:
-			global_rotation = Vector3(0, Singleton.pi, 0)
-		cachedDirection = direction
+	# rotate when turning
+
+	var _last_movement_direction := Vector3.BACK
+	
+	if move_direction.length() > 0.2:
+		_last_movement_direction = move_direction
+		
+		var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
+	
+		global_rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
+
+
+	move_and_slide()		
+	
+	#if cachedDirection != direction:
+		#if direction == Direction.forward:
+			#global_rotation = Vector3(0, 0, 0)
+		#elif direction == Direction.right:
+			#global_rotation = Vector3(0, -Singleton.pi / 2, 0)
+		#elif direction == Direction.left:
+			#global_rotation = Vector3(0, Singleton.pi / 2, 0)
+		#else:
+			#global_rotation = Vector3(0, Singleton.pi, 0)
+		#cachedDirection = direction
 	
 	# bomb mechanics
 	if Input.is_action_just_pressed("ui_throw"):
-		Singleton.started = true
 		var bomb_instance = Bomb.instantiate()
 		var bomb_offset_x
 		var bomb_offset_y

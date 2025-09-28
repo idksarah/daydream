@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://ve1cthw5oddh"]
 
 [ext_resource type="Script" uid="uid://bd4pwg12eha3k" path="res://bomb.gd" id="1_7p8ba"]
-[ext_resource type="PackedScene" uid="uid://rwucg6oaw1rp" path="res://GLB format/bomb.glb" id="1_m3cuc"]
+[ext_resource type="ArrayMesh" uid="uid://cq44delhswp07" path="res://Assets/Yellow-baby-duck/yellow_baby_duck.obj" id="2_4fn8o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xcgjq"]
-radius = 0.249023
+radius = 0.15837264
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5b0sl"]
 radius = 0.35958835
@@ -40,9 +40,6 @@ height = 1.5
 [node name="Bomb" type="RigidBody3D"]
 script = ExtResource("1_7p8ba")
 
-[node name="bomb2" parent="." instance=ExtResource("1_m3cuc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00608895, -0.196201, -0.000372421)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xcgjq")
 
@@ -62,6 +59,10 @@ draw_pass_1 = SubResource("CylinderMesh_36ajn")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="YellowBabyDuck" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.3113416e-10, 0, 0.003, 0, 0.003, 0, -0.003, 0, -1.3113416e-10, 0.0009928346, 0, 0.000919722)
+mesh = ExtResource("2_4fn8o")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

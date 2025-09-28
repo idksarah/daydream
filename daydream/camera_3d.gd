@@ -15,6 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_instance_valid(player) && Singleton.started:
+		pass
 		#var z_goal = player.position.z
 		var z_goal = min(position.z - z_reg_speed, player.position.z)
 		position.z = lerp(position.z, z_goal, 0.08 )
