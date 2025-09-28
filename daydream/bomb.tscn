@@ -60,7 +60,7 @@ draw_pass_1 = SubResource("CylinderMesh_36ajn")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="YellowBabyDuck" type="MeshInstance3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.3113416e-10, 0, 0.003, 0, 0.003, 0, -0.003, 0, -1.3113416e-10, 0.0009928346, 0, 0.000919722)
 mesh = ExtResource("2_4fn8o")
 

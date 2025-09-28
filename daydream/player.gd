@@ -90,6 +90,7 @@ func _physics_process(delta: float) -> void:
 	
 	# bomb mechanics
 	if Input.is_action_just_pressed("ui_throw"):
+		Singleton.started = true
 		var bomb_instance = Bomb.instantiate()
 		var bomb_offset_x
 		var bomb_offset_y
