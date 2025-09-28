@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 const SPEED = 25.0
@@ -28,18 +29,22 @@ func _physics_process(delta: float) -> void:
 	
 	# keymap peepee
 	if Input.is_action_just_released("ui_left"):
+		Singleton.started = true
 		velocity.x -= SPEED
 		direction = Direction.left
 	elif Input.is_action_just_released("ui_right"):
+		Singleton.started = true
 		velocity.x += SPEED
 		direction = Direction.right
 	else:
 		velocity.x = 0
 		
 	if Input.is_action_just_pressed("ui_up"):
+		Singleton.started = true
 		velocity.z -= SPEED
 		direction = Direction.forward
 	elif Input.is_action_just_pressed("ui_down"):
+		Singleton.started = true
 		velocity.z += SPEED
 		direction = Direction.back
 	else:
