@@ -7,7 +7,7 @@
 radius = 0.249023
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5b0sl"]
-radius = 0.777048
+radius = 0.79677
 
 [sub_resource type="Curve" id="Curve_tfsmu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.630435, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.021978), 0.0, 0.0, 0, 0]
@@ -41,7 +41,7 @@ height = 1.5
 script = ExtResource("1_7p8ba")
 
 [node name="bomb2" parent="." instance=ExtResource("1_m3cuc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045912, -0.196201, 0.0610327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00608895, -0.196201, -0.000372421)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xcgjq")

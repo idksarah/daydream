@@ -1,15 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://b62xwt22o0sn8"]
 
-[ext_resource type="Script" path="res://character_body_3d.gd" id="1_58pke"]
-[ext_resource type="PackedScene" uid="uid://dhqlb2vvkc2k0" path="res://GLB format/flag.glb" id="2_r01kg"]
+[ext_resource type="Script" path="res://player.gd" id="1_qwdvl"]
+[ext_resource type="ArrayMesh" uid="uid://b1hxfw4psm7w7" path="res://Assets/Big-duck/25_09_28_07_05_38_781.obj" id="3_qnkqd"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_askwt"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxp6f"]
+radius = 0.280901
+height = 0.576453
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_58pke")
+script = ExtResource("1_qwdvl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_askwt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251078, -0.0150313)
+shape = SubResource("CapsuleShape3D_wxp6f")
 
-[node name="flag2" parent="." instance=ExtResource("2_r01kg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228697, -0.0210272, 0.444632)
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251078, -0.0150313)
+shape = SubResource("CapsuleShape3D_wxp6f")
+
+[node name="250928070538781" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.31134e-10, 0, 0.003, 0, 0.003, 0, -0.003, 0, -1.31134e-10, 0.0584097, 0, -0.383408)
+mesh = ExtResource("3_qnkqd")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
