@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b1hxfw4psm7w7" path="res://Assets/Big-duck/Big-duck.obj" id="3_qnkqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxp6f"]
-radius = 0.280901
+radius = 0.2133789
 height = 0.576453
 
 [node name="Player" type="CharacterBody3D"]

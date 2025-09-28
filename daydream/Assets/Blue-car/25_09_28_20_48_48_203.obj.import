@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ylt62fmiui51"
+path="res://.godot/imported/25_09_28_20_48_48_203.obj-6c72657f9153b7782823885d0e38abcf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/25_09_28_20_48_48_203.obj-6c72657f9153b7782823885d0e38abcf.mesh"]
+
+source_file="res://Assets/Blue-car/25_09_28_20_48_48_203.obj"
+dest_files=["res://.godot/imported/25_09_28_20_48_48_203.obj-6c72657f9153b7782823885d0e38abcf.mesh", "res://.godot/imported/25_09_28_20_48_48_203.obj-6c72657f9153b7782823885d0e38abcf.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

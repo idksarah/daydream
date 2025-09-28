@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ds2q1xnjetsul"
+path="res://.godot/imported/lilypad.obj-9409cfba1cae4882d017e29d6c284135.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lilypad.obj-9409cfba1cae4882d017e29d6c284135.mesh"]
+
+source_file="res://Assets/Lilypad/lilypad.obj"
+dest_files=["res://.godot/imported/lilypad.obj-9409cfba1cae4882d017e29d6c284135.mesh", "res://.godot/imported/lilypad.obj-9409cfba1cae4882d017e29d6c284135.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

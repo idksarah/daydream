@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5u5ldjff46en"]
 
-[ext_resource type="Script" path="res://Assets/river.gd" id="1_h4lf5"]
+[ext_resource type="Script" uid="uid://cncl8sbugnj7s" path="res://Assets/river.gd" id="1_h4lf5"]
 [ext_resource type="PackedScene" uid="uid://018baw74duy3" path="res://Assets/River-1/river_1.tscn" id="1_o6jhb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5bw45"]
@@ -45,5 +45,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 shape = SubResource("BoxShape3D_5bw45")
+
+[node name="River-11" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.961894, 0, 0)
+
+[node name="River-12" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.889542, 0, 0)
+
+[node name="River-13" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.827074, 0, 0)
+
+[node name="River-14" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.857716, 0, 0)
+
+[node name="River-15" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.839246, 0, 0)
+
+[node name="River-16" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.769108, 0, 0)
+
+[node name="River-17" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.685267, 0, 0)
+
+[node name="River-18" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.724941, 0, 0)
+
+[node name="River-19" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-0.00043637602, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -0.00043637602, -17.704416, 0, 0)
+
+[node name="River-20" parent="." instance=ExtResource("1_o6jhb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.70454, 0, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

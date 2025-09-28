@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://bmuk0rna6mxrs"]
+[gd_scene load_steps=103 format=4 uid="uid://bmuk0rna6mxrs"]
 
 [ext_resource type="PackedScene" uid="uid://nik5n7gji3vh" path="res://GLB format/arrow.glb" id="1_eqil6"]
 [ext_resource type="PackedScene" uid="uid://bkjegts3gx12" path="res://GLB format/arrows.glb" id="2_ya24n"]
@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://bvtfv5g2qe7d4" path="res://GLB format/block-grass-overhang-long.glb" id="35_8msrr"]
 [ext_resource type="PackedScene" uid="uid://bwmrk67s2xmee" path="res://GLB format/block-grass-overhang-low-hexagon.glb" id="36_7pmdq"]
 [ext_resource type="PackedScene" uid="uid://ccx5t3ecy3f2b" path="res://GLB format/block-grass-overhang-low-large.glb" id="37_vanri"]
-[ext_resource type="PackedScene" uid="uid://dbcdmyrj0xaih" path="res://GLB format/block-grass-overhang-low-long.glb" id="38_pib7h"]
 [ext_resource type="PackedScene" uid="uid://dq1bss34ap02p" path="res://GLB format/block-grass-overhang-low-narrow.glb" id="39_2uuag"]
 [ext_resource type="PackedScene" uid="uid://c1w68x4rde5y7" path="res://GLB format/block-grass-overhang-low.glb" id="40_yva2b"]
 [ext_resource type="PackedScene" uid="uid://bfl7g8knrj6yb" path="res://GLB format/block-grass-overhang-narrow.glb" id="41_brwn4"]
@@ -52,9 +51,11 @@
 [ext_resource type="PackedScene" uid="uid://dv6benf0ldeyy" path="res://GLB format/coin-bronze.glb" id="89_a03dg"]
 [ext_resource type="PackedScene" uid="uid://cjd5iisdfnox4" path="res://GLB format/coin-gold.glb" id="90_r8bfo"]
 [ext_resource type="PackedScene" uid="uid://dprl1gux3rqbx" path="res://GLB format/coin-silver.glb" id="91_wnbox"]
+[ext_resource type="PackedScene" uid="uid://blwcdxes72kgk" path="res://Assets/block_grass_overhang_low_long_2.tscn" id="96_7rygx"]
 [ext_resource type="PackedScene" uid="uid://018baw74duy3" path="res://Assets/River-1/river_1.tscn" id="96_fw371"]
 [ext_resource type="PackedScene" uid="uid://7luw1ak4wxuv" path="res://GLB format/door-large-open.glb" id="96_g7u3v"]
 [ext_resource type="PackedScene" uid="uid://dme512nxfpirx" path="res://GLB format/door-open.glb" id="97_7pxf5"]
+[ext_resource type="ArrayMesh" uid="uid://ds2q1xnjetsul" path="res://Assets/Lilypad/lilypad.obj" id="97_q2t1y"]
 [ext_resource type="PackedScene" uid="uid://cojhh7wxvk5r7" path="res://GLB format/door-rotate-large.glb" id="98_jskut"]
 [ext_resource type="PackedScene" uid="uid://dimwtp3niv5ls" path="res://GLB format/door-rotate.glb" id="99_qc1h6"]
 [ext_resource type="PackedScene" uid="uid://dpdc0l1gmsvah" path="res://GLB format/fence-broken.glb" id="100_q4xys"]
@@ -140,8 +141,8 @@ shadow_mesh = SubResource("ArrayMesh_k08tg")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o3xmh"]
 points = PackedVector3Array(-0.960469, 0, -0.712585, 1.02225, 0.375568, 0.798547, 0.925047, 0.343508, -0.956875, -0.976889, 0.5, 0.756357, 0.805516, 0, 0.929408, -0.756168, 0.5, -0.976887, -0.867297, -2.77556e-17, 0.898544, 0.867436, 2.77556e-17, -0.898544, 0.75631, 0.5, 0.976887, 0.976834, 0.5, -0.756357, -0.798522, 0.375563, 1.02226, -0.7124, 0, -0.960466, -1.02208, 0.407556, -0.766558, 0.960414, 2.77556e-17, -0.712585, 0.733024, 0.439086, -1.02003, -1.02226, 0.375563, 0.798516, 0.960414, 0, 0.712585, 0.798479, 0.375565, 1.02228, -0.7124, 0, 0.960466, -0.798521, 0.375563, -1.02226, -0.960469, 2.77556e-17, 0.712585, 0.712539, 0, -0.960466, 1.02225, 0.375568, -0.798547, 0.976834, 0.5, 0.756357, -0.756168, 0.5, 0.976887, -0.976889, 0.5, -0.756357, 0.75631, 0.5, -0.976887, -0.95686, 0.343507, -0.925082, 0.712539, 0, 0.960466, 0.956845, 0.343511, 0.925121, 0.798479, 0.375565, -1.02228, -0.867297, -5.55112e-17, -0.898544)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ijtcm"]
-size = Vector3(21, 5, 11)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q2t1y"]
+points = PackedVector3Array(-4.3912687, -0.33230066, -1.2561706, 4.4122305, 0.36625302, 1.1179543, 4.1321664, 0.36625302, 1.9557261, 4.4122305, -0.33230066, 1.1179543, 0.91875106, 0.36625302, -4.471569, -2.573005, 0.36625302, 3.7722118, -0.8969276, -0.33230066, 4.4716682, 2.5948284, -0.33230066, -3.7712371, -4.250806, 0.36625302, -1.6754942, -2.154201, -0.33230066, -4.052245, 1.4771563, 0.36625302, 4.3316016, -4.250806, -0.33230066, 1.6764688, 3.992565, 0.36625302, -2.2348843, 2.5948284, -0.33230066, 3.7722118, -4.3912687, 0.36625302, 1.2571452, -2.154201, 0.36625302, -4.052245, 4.4122305, -0.33230066, -1.1169796, -0.8969276, -0.33230066, -4.471569, -3.4114745, -0.33230066, 3.0736308, -3.4114745, -0.33230066, -3.0726562, -0.8969276, 0.36625302, 4.4716682, 2.5948284, 0.36625302, -3.7712371, 0.91875106, -0.33230066, 4.4716682, 1.4771563, -0.33230066, -4.3306274, 2.5948284, 0.36625302, 3.7722118, 3.7133622, -0.33230066, 2.6543071, -3.832002, 0.36625302, 2.5151162, 3.7133622, -0.33230066, -2.6533325, 4.4122305, 0.36625302, -1.1169796, -3.1322718, 0.36625302, -3.352789, -2.154201, -0.33230066, 4.0523443, -0.8969276, 0.36625302, -4.471569)
 
 [node name="Tiles" type="Node3D"]
 
@@ -264,17 +265,6 @@ visible = false
 
 [node name="block-grass-overhang-low-large2" parent="." instance=ExtResource("37_vanri")]
 visible = false
-
-[node name="block-grass-overhang-low-long2" parent="." instance=ExtResource("38_pib7h")]
-visible = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="block-grass-overhang-low-long2"]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-low-long2/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-low-long2/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.25, 0.05)
-shape = SubResource("BoxShape3D_ijtcm")
 
 [node name="block-grass-overhang-low-narrow2" parent="." instance=ExtResource("39_2uuag")]
 visible = false
@@ -448,3 +438,20 @@ visible = false
 visible = false
 
 [node name="river-1" parent="." instance=ExtResource("96_fw371")]
+visible = false
+
+[node name="block-grass-overhang-low-long2" parent="." instance=ExtResource("96_7rygx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46157193, 0.5, 0.59159255)
+visible = false
+
+[node name="lilypad" type="Node3D" parent="."]
+
+[node name="lilypad" type="MeshInstance3D" parent="lilypad"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = ExtResource("97_q2t1y")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lilypad/lilypad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lilypad/lilypad/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_q2t1y")
