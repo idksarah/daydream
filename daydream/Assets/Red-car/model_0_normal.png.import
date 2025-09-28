@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhrtryxge1v22"
-path="res://.godot/imported/model_1_transmittance.png-866016d1d62f8744a8b0cfdf82a62187.ctex"
+uid="uid://cq3r1176nbuxh"
+path="res://.godot/imported/model_0_normal.png-da7ad14ba04d665652ddb566340342d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/car/model_1_transmittance.png"
-dest_files=["res://.godot/imported/model_1_transmittance.png-866016d1d62f8744a8b0cfdf82a62187.ctex"]
+source_file="res://Assets/Red-car/model_0_normal.png"
+dest_files=["res://.godot/imported/model_0_normal.png-da7ad14ba04d665652ddb566340342d7.ctex"]
 
 [params]
 

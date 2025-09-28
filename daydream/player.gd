@@ -9,6 +9,7 @@ var Bomb = preload("res://bomb.tscn")
 
 
 @export var rotation_speed := 20.0
+@onready var trail = $Trail
 
 var Direction := {
 	forward = "forward",
@@ -22,9 +23,11 @@ var cachedDirection = Direction.forward
 
 var score = 0
 
+
 func _physics_process(delta: float) -> void:
 	score =  (int(abs(position.z - 5) * 10))
 	hud.set_score(score)
+	
 	
 	#get direction
 	var raw_input := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -42,26 +45,28 @@ func _physics_process(delta: float) -> void:
 	# keymap peepee
 	if Input.is_action_just_released("ui_left"):
 		Singleton.started = true
+		trail.visible = true
 		velocity.x -= SPEED
 		direction = Direction.left
+		
 	elif Input.is_action_just_released("ui_right"):
+		trail.visible = true
 		Singleton.started = true
 		velocity.x += SPEED
 		direction = Direction.right
-	else:
-		velocity.x = 0
-		
-	if Input.is_action_just_pressed("ui_up"):
+	elif Input.is_action_just_pressed("ui_up"):
+		trail.visible = true
 		Singleton.started = true
 		velocity.z -= SPEED
 		direction = Direction.forward
 	elif Input.is_action_just_pressed("ui_down"):
+		trail.visible = true
 		Singleton.started = true
 		velocity.z += SPEED
 		direction = Direction.back
 	else:
+		velocity.x = 0
 		velocity.z = 0
-		
 	
 	# rotate when turning
 
