@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print(body.name)
 	if body is Player:
 		await get_tree().create_timer(falling_timeout).timeout
 		Singleton.restart_scene()

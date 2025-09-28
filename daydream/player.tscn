@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b62xwt22o0sn8"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_qwdvl"]
+[ext_resource type="Script" uid="uid://b2tqk0bungxn5" path="res://player.gd" id="1_qwdvl"]
 [ext_resource type="ArrayMesh" uid="uid://b1hxfw4psm7w7" path="res://Assets/Big-duck/Big-duck.obj" id="3_qnkqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxp6f"]

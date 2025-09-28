@@ -11,4 +11,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position = Vector3(player.position.x, y_offset, player.position.z)
+	if is_instance_valid(player):
+		position = Vector3(player.position.x, y_offset, player.position.z)

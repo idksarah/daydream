@@ -18,7 +18,5 @@ func _process(delta: float) -> void:
 		position.x += speed
 	if position.x <= Singleton.left_end:
 		position.x += Singleton.right_end - Singleton.left_end
-		#print("going to right side")
 	elif position.x >= Singleton.right_end:
 		position.x -= Singleton.right_end - Singleton.left_end
-		#print("going to left side")

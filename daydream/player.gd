@@ -20,7 +20,7 @@ var cachedDirection = Direction.forward
 var score = 0
 
 func _physics_process(delta: float) -> void:
-	score =  (int(abs(position.z - 5) * 10))
+	score =  (int(abs(position.z - 12) * 10))
 	hud.set_score(score)
 	
 	# gravity
@@ -49,8 +49,6 @@ func _physics_process(delta: float) -> void:
 		direction = Direction.back
 	else:
 		velocity.z = 0
-		
-	#print(direction)
 
 	move_and_slide()
 	
@@ -68,6 +66,7 @@ func _physics_process(delta: float) -> void:
 	
 	# bomb mechanics
 	if Input.is_action_just_pressed("ui_throw"):
+		Singleton.started = true
 		var bomb_instance = Bomb.instantiate()
 		var bomb_offset_x
 		var bomb_offset_y
@@ -89,7 +88,6 @@ func _physics_process(delta: float) -> void:
 		get_tree().get_root().add_child(bomb_instance)
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	#print(body.exploding)
 	if (body is Car):
 		Singleton.restart_scene()
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://ch2e3fvmhuh3w"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_qrpgm"]
+[ext_resource type="Script" uid="uid://cu5wdyccdyix2" path="res://hud.gd" id="1_qrpgm"]
 [ext_resource type="FontFile" uid="uid://bd7iajmkmfwfg" path="res://Assets/Fonts/beachday.ttf" id="1_r7e15"]
 
 [sub_resource type="Theme" id="Theme_6uqwt"]
 default_font = ExtResource("1_r7e15")
-default_font_size = 35
+default_font_size = 50
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_qrpgm")
@@ -29,3 +29,22 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme = SubResource("Theme_6uqwt")
 text = "top: 0"
+
+[node name="Start" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -52.5
+offset_right = 320.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = SubResource("Theme_6uqwt")
+text = "Press wasd to start
+press space to throw bombs! "
+horizontal_alignment = 1
