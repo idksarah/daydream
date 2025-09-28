@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://bmuk0rna6mxrs"]
+[gd_scene load_steps=149 format=4 uid="uid://bmuk0rna6mxrs"]
 
 [ext_resource type="PackedScene" uid="uid://nik5n7gji3vh" path="res://GLB format/arrow.glb" id="1_eqil6"]
 [ext_resource type="PackedScene" uid="uid://bkjegts3gx12" path="res://GLB format/arrows.glb" id="2_ya24n"]
@@ -186,6 +186,12 @@ shadow_mesh = SubResource("ArrayMesh_k08tg")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o3xmh"]
 points = PackedVector3Array(-0.960469, 0, -0.712585, 1.02225, 0.375568, 0.798547, 0.925047, 0.343508, -0.956875, -0.976889, 0.5, 0.756357, 0.805516, 0, 0.929408, -0.756168, 0.5, -0.976887, -0.867297, -2.77556e-17, 0.898544, 0.867436, 2.77556e-17, -0.898544, 0.75631, 0.5, 0.976887, 0.976834, 0.5, -0.756357, -0.798522, 0.375563, 1.02226, -0.7124, 0, -0.960466, -1.02208, 0.407556, -0.766558, 0.960414, 2.77556e-17, -0.712585, 0.733024, 0.439086, -1.02003, -1.02226, 0.375563, 0.798516, 0.960414, 0, 0.712585, 0.798479, 0.375565, 1.02228, -0.7124, 0, 0.960466, -0.798521, 0.375563, -1.02226, -0.960469, 2.77556e-17, 0.712585, 0.712539, 0, -0.960466, 1.02225, 0.375568, -0.798547, 0.976834, 0.5, 0.756357, -0.756168, 0.5, 0.976887, -0.976889, 0.5, -0.756357, 0.75631, 0.5, -0.976887, -0.95686, 0.343507, -0.925082, 0.712539, 0, 0.960466, 0.956845, 0.343511, 0.925121, 0.798479, 0.375565, -1.02228, -0.867297, -5.55112e-17, -0.898544)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijtcm"]
+size = Vector3(21, 5, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vrgf5"]
+size = Vector3(2.1, 0.5, 2.1)
+
 [node name="Tiles" type="Node3D"]
 
 [node name="arrow2" parent="." instance=ExtResource("1_eqil6")]
@@ -310,6 +316,14 @@ visible = false
 
 [node name="block-grass-overhang-low-long2" parent="." instance=ExtResource("38_pib7h")]
 visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="block-grass-overhang-low-long2"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block-grass-overhang-low-long2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-overhang-low-long2/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.25, 0.05)
+shape = SubResource("BoxShape3D_ijtcm")
 
 [node name="block-grass-overhang-low-narrow2" parent="." instance=ExtResource("39_2uuag")]
 visible = false
@@ -621,4 +635,12 @@ visible = false
 visible = false
 
 [node name="river-1" parent="." instance=ExtResource("142_ydyxy")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="river-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35, 24.8, 0)
+skeleton = NodePath("../..")
+
+[node name="River-1" type="Area3D" parent="river-1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="river-1/River-1"]
+shape = SubResource("BoxShape3D_vrgf5")

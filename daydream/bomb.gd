@@ -4,7 +4,7 @@ extends RigidBody3D
 @onready var debris = $Debris
 var body
 @onready var timer = $Timer
-var explosion_timeout = 1
+var explosion_timeout = 1.5
 var animation_timeout = .2
 var exploding = false
 

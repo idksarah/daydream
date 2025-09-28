@@ -2,10 +2,11 @@ extends Camera3D
 
 @onready var player = $"../Player"
 
-var y_offset = 3
+var y_offset = 2.5
 var z_offset = 2
-var z_reg_speed = .1
+var z_reg_speed = .075
 var z_move_speed = 2
+var z_off_screen_thresh = 1.8
 
 var cached_z
 

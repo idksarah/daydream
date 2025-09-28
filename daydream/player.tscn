@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b62xwt22o0sn8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qwdvl"]
-[ext_resource type="ArrayMesh" uid="uid://b1hxfw4psm7w7" path="res://Assets/Big-duck/25_09_28_07_05_38_781.obj" id="3_qnkqd"]
+[ext_resource type="ArrayMesh" uid="uid://b1hxfw4psm7w7" path="res://Assets/Big-duck/Big-duck.obj" id="3_qnkqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxp6f"]
 radius = 0.280901
@@ -20,9 +20,14 @@ shape = SubResource("CapsuleShape3D_wxp6f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251078, -0.0150313)
 shape = SubResource("CapsuleShape3D_wxp6f")
 
-[node name="250928070538781" type="MeshInstance3D" parent="."]
+[node name="BigDuck" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.31134e-10, 0, 0.003, 0, 0.003, 0, -0.003, 0, -1.31134e-10, 0.0584097, 0, -0.383408)
 mesh = ExtResource("3_qnkqd")
 
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26032, 0)
+aabb = AABB(-0.27179, -0.286926, -0.26294, 0.543579, 0.573853, 0.525879)
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

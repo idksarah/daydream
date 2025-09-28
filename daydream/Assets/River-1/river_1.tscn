@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://018baw74duy3"]
+
+[ext_resource type="PackedScene" uid="uid://di5burt3qt61g" path="res://Assets/River-1/River-1.glb" id="1_byejd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_16mbr"]
+points = PackedVector3Array(1.04984, 0.268052, 1.0726, 0.984157, -0.2682, -0.97109, -0.992433, -0.2682, 1.00556, 0.984157, -0.2682, 1.00576, -0.992433, -0.2682, -0.970682, -1.05831, 0.26811, 1.0726, 1.04984, 0.268052, -1.03562, -1.05831, 0.26811, -1.03539, -0.199932, -0.16876, -1.13964, -0.551686, -0.202745, 1.1307, -0.466478, 0.26811, 1.18359, 0.548831, -0.0977952, 1.1423, 0.583234, 0.151653, -1.13998, -0.0966836, 0.26811, -1.14662, 0.580848, -0.132641, -1.13536, 0.546435, 0.151337, 1.13735, -0.192265, -0.230221, -1.06069, 0.54209, -0.167018, -1.12848, -0.200555, 0.187816, -1.14327, 0.546017, 0.186773, -1.13659)
+
+[node name="River-1" instance=ExtResource("1_byejd")]
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("ConvexPolygonShape3D_16mbr")

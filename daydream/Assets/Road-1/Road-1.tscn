@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c513n60qrj0a7"]
+
+[ext_resource type="PackedScene" uid="uid://y5q8tcakgj7r" path="res://Assets/Road-1/Road-1.glb" id="1_ypea4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_npbug"]
+points = PackedVector3Array(0.145602, 0.256, 0.495632, -0.99436, -0.256, -0.99436, -0.99436, -0.256, 0.99436, 0.99436, -0.256, -0.99436, -1.00663, 0.244, -1.00663, 0.99436, -0.256, 0.99436, 1.0064, 0.244, -1.0064, -1.00663, 0.244, 1.00663, 1.0064, 0.244, 1.0064, -0.145785, 0.256, -0.495632, 0.145602, 0.256, -0.495632, -0.145785, 0.256, 0.495632)
+
+[node name="Road-1" instance=ExtResource("1_ypea4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Area (3)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area (3)/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_npbug")

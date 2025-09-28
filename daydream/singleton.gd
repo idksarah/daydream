@@ -1,8 +1,8 @@
 extends Node
 
-var left_end = 5
+var left_end = 0
 var right_end = 25
-var highest_score = 0
+var top_score = 0
 
 var pi = 3.14159
 
