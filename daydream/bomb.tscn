@@ -7,7 +7,7 @@
 radius = 0.15837264
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5b0sl"]
-radius = 0.28952998
+radius = 0.37930673
 
 [sub_resource type="Curve" id="Curve_tfsmu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.630435, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.021978), 0.0, 0.0, 0, 0]

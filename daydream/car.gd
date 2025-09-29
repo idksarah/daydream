@@ -15,8 +15,8 @@ var rand = randi() % 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	goingLeft = bool(randi() % 2)
-	if !goingLeft:
-		rotate_y(Singleton.pi)
+	#if !goingLeft:
+		#rotate_y(Singleton.pi)
 	if rand == 0:
 		CarModel.mesh = load(red_car_path)
 	if rand == 1:
