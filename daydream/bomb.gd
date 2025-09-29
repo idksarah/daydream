@@ -32,17 +32,21 @@ func _process(delta: float) -> void:
 	else:
 		is_yellow = true
 		model.mesh = load(yellow_baby_path)
+		
+	print (playerInRadius)
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	print("bomb entered; body name = " + str(body))
 	if (!(body is Fence || body is Car || body is Player)): return
-	#print("bomb entered; body name = " + str(body))
+	
 	playerInRadius = true
 	await get_tree().create_timer(timer.time_left + animation_timeout).timeout
 	if is_instance_valid(body) && body is Player && playerInRadius:
 		Singleton.restart_scene()
+		playerInRadius = false
 	if is_instance_valid(body) && !(body is Player):
 		body.queue_free()
-
+		playerInRadius = false
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if is_instance_valid(body) && body is Player:

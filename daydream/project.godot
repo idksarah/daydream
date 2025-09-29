@@ -13,6 +13,8 @@ config_version=5
 config/name="daydream"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0.5176471, 0.7411765, 0.79607844, 1)
+boot_splash/image="uid://ckj6rtl2kkd8u"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -62,4 +64,5 @@ ui_throw={
 
 [rendering]
 
+environment/defaults/default_clear_color=Color(0.395, 0.6583333, 0.79, 1)
 environment/transparent_background=false

@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch2e3fvmhuh3w"]
+[gd_scene load_steps=4 format=3 uid="uid://ch2e3fvmhuh3w"]
 
 [ext_resource type="Script" uid="uid://cu5wdyccdyix2" path="res://hud.gd" id="1_qrpgm"]
 [ext_resource type="FontFile" uid="uid://bd7iajmkmfwfg" path="res://Assets/Fonts/beachday.ttf" id="1_r7e15"]
-[ext_resource type="Texture2D" uid="uid://ckj6rtl2kkd8u" path="res://TitleScreen.png" id="3_8sq4i"]
 
 [sub_resource type="Theme" id="Theme_6uqwt"]
 default_font = ExtResource("1_r7e15")
@@ -49,8 +48,3 @@ theme = SubResource("Theme_6uqwt")
 text = "Press wasd to start
 press space to throw bombs! "
 horizontal_alignment = 1
-
-[node name="TitleScreen" type="Sprite2D" parent="."]
-position = Vector2(572.2499, 330.50006)
-scale = Vector2(0.28987506, 0.22699995)
-texture = ExtResource("3_8sq4i")

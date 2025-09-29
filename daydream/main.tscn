@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://fga0figafm4u" path="res://camera_3d.gd" id="1_hmtgj"]
 [ext_resource type="MeshLibrary" uid="uid://coer2pi3r25rm" path="res://Assets/tiles.tres" id="1_wskms"]
-[ext_resource type="PackedScene" uid="uid://ve1cthw5oddh" path="res://bomb.tscn" id="3_14qy1"]
 [ext_resource type="PackedScene" uid="uid://kor8ar4s7f2u" path="res://fence.tscn" id="3_ugsh4"]
 [ext_resource type="PackedScene" uid="uid://ch2e3fvmhuh3w" path="res://hud.tscn" id="4_5p71c"]
 [ext_resource type="PackedScene" uid="uid://bmcr2q3h86eou" path="res://car.tscn" id="5_vkax5"]
@@ -12,15 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://djh5c2kuw8bb0" path="res://log.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://bq0s1f2eddymt" path="res://lilypad.tscn" id="11_efxa6"]
 
+[sub_resource type="Environment" id="Environment_efxa6"]
+ambient_light_energy = 0.0
+
 [node name="Main" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.965926, -0.23457, 0.109382, 0, 0.422618, 0.906308, -0.258819, -0.875426, 0.408218, 11.334, 2, 6.615)
 fov = 117.316
 script = ExtResource("1_hmtgj")
-
-[node name="Bomb2" parent="." instance=ExtResource("3_14qy1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3975, 0.75, 4.31096)
 
 [node name="Fence" parent="." instance=ExtResource("3_ugsh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4353, 0.75, 3.66912)
@@ -126,3 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.487417, 1, -32.58334)
 
 [node name="Car14" parent="." instance=ExtResource("5_vkax5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2766685, 0.9999981, -34.378826)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_efxa6")

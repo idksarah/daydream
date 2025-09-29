@@ -1,24 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmcr2q3h86eou"]
+[gd_scene load_steps=5 format=3 uid="uid://bmcr2q3h86eou"]
 
 [ext_resource type="Script" uid="uid://b03cx78bpm3eg" path="res://car.gd" id="1_ph3jr"]
-[ext_resource type="ArrayMesh" uid="uid://bfsk6w3jpo7c0" path="res://Assets/Red-car/RedCar.obj" id="2_h4gpy"]
+[ext_resource type="ArrayMesh" uid="uid://b4blydapaxlck" path="res://Assets/Red-car/RedCar.obj" id="2_uoj53"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_km50d"]
-size = Vector3(0.6435698, 0.905822, 1.68828)
+size = Vector3(0.73547745, 0.905822, 1.68828)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uoj53"]
+size = Vector3(1.3621826, 1.7907104, 2.2470856)
 
 [node name="Car" type="RigidBody3D"]
 script = ExtResource("1_ph3jr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.39479, 0.458892, -0.044567183)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0038433075, 0, 0)
 shape = SubResource("BoxShape3D_km50d")
-
-[node name="CarModel" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.49691e-10, 0, 0.008, 0, 0.008, 0, -0.008, 0, -3.49691e-10, 0, 0, 0)
-mesh = ExtResource("2_h4gpy")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.39479, 0.458892, -0.044567183)
-shape = SubResource("BoxShape3D_km50d")
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.030212402, 0.23562622, 0.024024963)
+shape = SubResource("BoxShape3D_uoj53")
+
+[node name="CarModel" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.496911e-10, 0, 0.008, 0, 0.008, 0, -0.008, 0, -3.496911e-10, 0, 0, 0)
+mesh = ExtResource("2_uoj53")

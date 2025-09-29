@@ -4,7 +4,6 @@ extends CanvasLayer
 @onready var top_score = $TopScore
 @onready var start = $Start
 @onready var player = $"../Player"
-@onready var title = $TitleScreen
 
 var score_value = 0
 var top_score_value = Singleton.top_score
@@ -20,12 +19,10 @@ func _process(delta: float) -> void:
 		start.visible = true
 		score.visible = false
 		top_score.visible = false
-		title.visible = false
 	else:
 		start.visible = false
 		score.visible = true
 		top_score.visible = true
-		title.visible = false
 		
 		score.text = str(score_value)
 	
