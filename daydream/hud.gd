@@ -11,7 +11,8 @@ var top_score_value = Singleton.top_score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
+	#title.scale.x = DisplayServer.screen_get_size().x / title.texture.get_width()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 		start.visible = true
 		score.visible = false
 		top_score.visible = false
-		title.visible = true
+		title.visible = false
 	else:
 		start.visible = false
 		score.visible = true
